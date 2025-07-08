@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import { useSelector } from 'react-redux';
 import Sidebar from './components/Sidebar';
-import Crousal from './components/crousal';
+import Crousal from './components/Crousal';
 import CartSidebar from './components/cartSidebar';
 
 const App = () => {

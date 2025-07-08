@@ -8,7 +8,7 @@ import { CiMoneyCheck1 } from "react-icons/ci";
 import { RiDeleteBin7Fill } from "react-icons/ri";
 import { empty } from '../features/cart/userCart.js';
 
-const CartSidebar = () => {
+const CartSidebarr = () => {
 
     const dispatch = useDispatch()
     const cartLength = useSelector((state) => state.userCart)
@@ -64,4 +64,4 @@ const CartSidebar = () => {
     )
 }
 
-export default CartSidebar
+export default CartSidebarr

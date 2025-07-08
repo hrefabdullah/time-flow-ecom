@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import { useSelector } from 'react-redux';
 import Sidebar from './components/Sidebar';
 import Crousal from './components/Crousal';
-import CartSidebar from './components/cartSidebar';
+import CartSidebar from './components/CartSidebarr'
 
 const App = () => {
   const isDark = useSelector((state) => state.darkMode);

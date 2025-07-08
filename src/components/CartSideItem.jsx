@@ -10,7 +10,7 @@ const CartSideItem = ({ image, name, price, color, idx }) => {
     const highPrice = Math.floor(usdPrice*2)
 
     return (
-        <div className='relative mt-5 w-[90%] h-max p-3 rounded-lg bg-white text-[#101019]  shadow-lg'>
+        <div className='relative mt-5 w-[90%] lg:w-[80%] h-max p-3 rounded-lg bg-white text-[#101019]  shadow-lg'>
             <button onClick={() => dispatch(removeItemCart(idx))} className='absolute right-2 top-2 active:text-red-600'><RxCross2 /></button>
             <img className='mt-3' src={image} alt="" />
                 <h1 className='text-sm mb-1'>{name}

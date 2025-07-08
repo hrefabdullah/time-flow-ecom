@@ -35,7 +35,7 @@ const CartSidebarr = () => {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: "tween", duration: 0.2 }}
-                className={`place-self-end w-[50%] z-50 fixed top-0 right-0 h-full md:w-[35%] lg:w-[25%] mf p-5 ${isDark ? 'bg-[#13131a] text-white' : "bg-zinc-200 text-[#101019]"} transition-colors duration-300`}>
+                className={`place-self-end w-[50%] z-50 fixed top-0 right-0 h-full md:w-[35%] lg:w-[20%] mf p-5 ${isDark ? 'bg-[#13131a] text-white' : "bg-zinc-200 text-[#101019]"} transition-colors duration-300`}>
                 <button onClick={closeCartSidebar}><RxCross2 className='absolute right-5 top-5 text-lg' /></button>
                 <h1 className='text-xl font-medium place-self-start'>Your Cart</h1>
                 {cartLength.length ? <div className='flex flex-col justify-between h-[94%]'>
@@ -45,7 +45,7 @@ const CartSidebarr = () => {
                         </div>
                     ))}
                     <div className='flex gap-3 place-self-center'>
-                        <div className='flex items-center text-xl font-semibold bg-green-500 w-max px-3 py-2 rounded-lg text-white gap-3'>
+                        <div className='flex items-center text-xl font-semibold bg-zinc-800 w-max px-3 py-2 rounded-lg text-white gap-3'>
                             <button>Buy</button>
                             <CiMoneyCheck1 />
                         </div>

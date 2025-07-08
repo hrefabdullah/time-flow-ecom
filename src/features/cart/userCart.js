@@ -22,9 +22,12 @@ const userCartSlice = createSlice({
         removeItemCart: (state, action) => {
             const idx = action.payload
             state.splice(idx, 1)
+        },
+        empty: (state) => {
+            state.length = 0
         }
     }
 })
 
-export const { addItemCart, removeItemCart } = userCartSlice.actions
+export const { addItemCart, removeItemCart, empty } = userCartSlice.actions
 export default userCartSlice.reducer

@@ -6,6 +6,7 @@ import Crousal from './components/Crousal';
 import CartSidebar from './components/CartSidebarr'
 import Cataloge from './components/Cataloge';
 import Quote from './components/Quote';
+import Category from './components/Category';
 
 const App = () => {
   const isDark = useSelector((state) => state.darkMode);
@@ -20,7 +21,8 @@ const App = () => {
       <Crousal />
       <Cataloge name={'New Arrivals'} type={'new'} />
       <Quote />  
-      <Cataloge name={'Best Sellers'} type={'best'} />   
+      <Category type={'gender'} />   
+      <Cataloge name={'Best Sellers'} type={'best'} />
     </div>
   );
 };

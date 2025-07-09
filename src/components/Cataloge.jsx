@@ -14,7 +14,7 @@ const Cataloge = ({ name, type }) => {
 
   return (
     <div 
-    className={`${isDark ? 'bg-[#101019]' : 'bg-[#101019] text-white'} w-full h-[20vh] min-h-[310px] md:min-h-[450px] md:h-[20vh] flex flex-col gap-4 p-5 items-center`}>
+    className={`${isDark ? 'bg-[#101019]' : 'bg-[#101019] text-white'} w-full h-[20vh] min-h-[340px] md:min-h-[450px] md:h-[20vh] flex flex-col gap-4 p-5 items-center`}>
 
       <h1 
       className='text-lg md:text-2xl opacity-90'
@@ -45,7 +45,6 @@ const Cataloge = ({ name, type }) => {
         msOverflowStyle: 'none'
       }} 
       className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-start`}>
-
 
         {best.slice(0, 4).map((item, idx) => (
           <ProductCard key={idx} item={item} />

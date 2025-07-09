@@ -8,6 +8,7 @@ import Cataloge from './components/Cataloge';
 import Quote from './components/Quote';
 import Category from './components/Category';
 import Footer from './components/Footer';
+import Testimonials from './components/Testimonials';
 
 const App = () => {
   const isDark = useSelector((state) => state.darkMode);
@@ -25,6 +26,7 @@ const App = () => {
       <Category type={'gender'} />   
       <Cataloge name={'Best Sellers'} type={'best'} />
       <Category type={'brands'} />
+      <Testimonials />
       <Footer />
     </div>
   );

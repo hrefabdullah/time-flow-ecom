@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Category = ({ type }) => {
+
+    const isDark = useSelector((state) => state.darkMode)
 
     const genders = [
         {
@@ -44,7 +47,7 @@ const Category = ({ type }) => {
                 >Shop By Brand</h1>
                 {brands.map((elem, idx) => (
                     <div
-                    className='h-[5vh] border-b-1 p-7 w-full justify-center items-center text-white hover:bg-white hover:text-[#101019] flex'
+                    className={`${isDark ? 'text-white hover:bg-white hover:text-[#101019]' : 'text-[#101019] hover:bg-[#101019] hover:text-white'} h-[5vh] border-b-1 p-7 w-full justify-center items-center flex`}
                     key={idx}>
                         <h1>{elem}</h1>
                     </div>

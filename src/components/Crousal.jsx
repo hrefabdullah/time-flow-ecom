@@ -25,9 +25,9 @@ const Crousal = () => {
           duration: 2,
           ease: 'easeInOut',
         }}
-        className='flex h-[30vh] md:h-[93vh] w-[100vw] relative'>
+        className='flex h-[30vh] md:h-[53vh] w-[100vw] relative'>
         {imgs.map((elem, idx) => (
-          <img key={idx} className='w-screen h-full flex-shrink-0 object-cover object-[20%_90%]' src={elem} alt="" />
+          <img key={idx} className='w-screen h-full flex-shrink-0 object-cover object-[20%_60%]' src={elem} alt="" />
         ))}
       </motion.div>
     </>

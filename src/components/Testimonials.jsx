@@ -26,7 +26,7 @@ export default function Testimonials() {
 
   return (
     <section
-      className={`py-20 px-4 transition-colors duration-300 ${
+      className={`py-10 px-4 transition-colors duration-300 ${
         isDark ? '' : 'bg-white'
       }`}
     >

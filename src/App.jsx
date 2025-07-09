@@ -18,8 +18,9 @@ const App = () => {
       {isSidebar ? <Sidebar /> : ''}
       {isCartSidebar ? <CartSidebar />: ''}  
       <Crousal />
-      <Cataloge />
-      <Quote />     
+      <Cataloge name={'New Arrivals'} type={'new'} />
+      <Quote />  
+      <Cataloge name={'Best Sellers'} type={'best'} />   
     </div>
   );
 };

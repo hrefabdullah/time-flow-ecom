@@ -30,8 +30,8 @@ const ProductCard = ({ item }) => {
         className='font-medium md:text-xl text-sm font-sans'>
           <span 
           className='font-normal line-through opacity-80'>
-          {price}</span>
-        { disPrice }</h1>
+          {price}</span>  
+        {" " + disPrice }</h1>
 
     </div>
   )

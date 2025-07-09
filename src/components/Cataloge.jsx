@@ -30,7 +30,7 @@ const Cataloge = ({ name, type }) => {
         scrollbarWidth: 'none',
         msOverflowStyle: 'none'
       }} 
-      className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center`}>
+      className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
         <ProductCard item={products[2]} />
         <ProductCard item={products[19]} />
@@ -44,7 +44,7 @@ const Cataloge = ({ name, type }) => {
         scrollbarWidth: 'none',
         msOverflowStyle: 'none'
       }} 
-      className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-start`}>
+      className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-start items-center`}>
 
         {best.slice(0, 4).map((item, idx) => (
           <ProductCard key={idx} item={item} />

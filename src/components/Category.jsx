@@ -16,11 +16,11 @@ const Category = ({ type }) => {
             url: 'https://images.unsplash.com/photo-1590003168429-4b47c1dd9b08?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FydG9vbiUyMHdhdGNoZXN8ZW58MHx8MHx8fDA%3D'
         }
     ]
-    const Brands = ['Timex', 'Titan', 'Fasttrack', 'Shop by Brand']
+    const brands = ['Timex', 'Titan', 'Fasttrack', 'View all']
 
     return (
         <>
-            {type === 'gender' ? 
+            {type === 'gender' && 
             <div
             className='w-full h-[30vh] md:h-[40vh] flex'>
                 {genders.map((elem, idx) => (
@@ -35,10 +35,20 @@ const Category = ({ type }) => {
                         >{elem.type}</h1>
                     </div>
                 ))}
-            </div> : 
+            </div>}
+            {type === 'brands' && 
             <div
-            className='w-full h-[40vh] mt-4'>
-
+            className='w-full h-[40vh] flex flex-col px-8 py-6'>
+                <h1
+                className='text-2xl mb-5'
+                >Shop By Brand</h1>
+                {brands.map((elem, idx) => (
+                    <div
+                    className='h-[5vh] border-b-1 p-7 w-full justify-center items-center text-white hover:bg-white hover:text-[#101019] flex'
+                    key={idx}>
+                        <h1>{elem}</h1>
+                    </div>
+                ))}
             </div>}
         </>
     )

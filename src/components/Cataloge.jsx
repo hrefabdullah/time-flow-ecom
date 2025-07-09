@@ -14,7 +14,7 @@ const Cataloge = ({ name, type }) => {
 
   return (
     <div 
-    className={`${isDark ? 'bg-[#101019]' : 'bg-[#101019] text-white'} w-full h-[20vh] min-h-[340px] md:min-h-[450px] md:h-[20vh] flex flex-col gap-4 p-5 items-center`}>
+    className={`${isDark ? 'bg-[#101019]' : 'bg-[#101019] text-white'} w-full h-[20vh] min-h-[340px] md:min-h-[450px] md:h-[20vh] flex flex-col gap-4 p-5 items-center mt-5`}>
 
       <h1 
       className='text-lg md:text-2xl opacity-90'

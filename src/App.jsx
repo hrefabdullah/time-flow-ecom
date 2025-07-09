@@ -7,6 +7,7 @@ import CartSidebar from './components/CartSidebarr'
 import Cataloge from './components/Cataloge';
 import Quote from './components/Quote';
 import Category from './components/Category';
+import Footer from './components/Footer';
 
 const App = () => {
   const isDark = useSelector((state) => state.darkMode);
@@ -23,6 +24,8 @@ const App = () => {
       <Quote />  
       <Category type={'gender'} />   
       <Cataloge name={'Best Sellers'} type={'best'} />
+      <Category type={'brands'} />
+      <Footer />
     </div>
   );
 };

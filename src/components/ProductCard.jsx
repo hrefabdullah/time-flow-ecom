@@ -1,40 +1,49 @@
-import React, { useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const ProductCard = ({ item }) => {
+  const isDark = useSelector((state) => state.darkMode);
+  const [img, setImg] = useState(item.img1);
 
-    const isDark = useSelector((state) => state.darkMode)
-
-    const [img, setImg] = useState(item.img1)
-
-    const disPrice = "₹" + item.price
-    const usdPrice = "$" + Math.floor(item.price/85)
-    const price = "₹" + (item.price + Math.floor(item.price/10))
+  const originalPrice = item.price + Math.floor(item.price / 10);
+  const discountPrice = item.price;
+  const usdPrice = "$" + Math.floor(item.price / 85);
 
   return (
-    <div 
-    className={`bg-white h-[90%] lg:h-[95%] min-w-[145px] md:min-w-[300px] md:w-[10vw] p-9 rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 hover:scale-102`}>
+    <div
+      className={`bg-white ${
+        isDark ? 'bg-gray-800 text-white' : 'bg-white text-black'
+      } rounded-xl shadow-md p-4 flex flex-col items-center hover:scale-[1.02] transition-transform duration-300 cursor-pointer w-full h-full`}
+    >
+      {/* Image with hover effect */}
+      <div className="w-full flex justify-center items-center mb-3 h-[140px] md:h-[180px] lg:h-[200px] overflow-hidden">
+        <img
+          src={img}
+          alt={item.name}
+          onMouseEnter={() => setImg(item.img3)}
+          onMouseOut={() => setImg(item.img1)}
+          className="object-contain max-h-full transition-transform duration-300"
+        />
+      </div>
 
-        <img 
-        className='md:w-[20vw] w-[25vw] min-w-[130px] md:h-[16vh] lg:h-[27vh] h-[17vh] object-contain' 
-        onMouseEnter={() => setImg(item.img3)} 
-        onMouseOut={() => setImg(item.img1)} src={img} alt={item.name}  />
+      {/* Product Brand */}
+      <h2 className="text-sm md:text-base font-semibold mb-1 truncate">{item.brand}</h2>
 
-        <h1 
-        className='text-sm md:text-lg font-medium font-sans mb-[-3px] mt-2'>{item.brand}</h1>
+      {/* Product Name */}
+      <p className="text-xs md:text-sm text-gray-500 dark:text-gray-300 mb-2 text-center line-clamp-2">
+        {item.name}
+      </p>
 
-        <h1 
-        className='text-xs md:text-[1.4vh]'>{item.name}</h1>
+      {/* Pricing */}
+      <div className="text-sm md:text-base font-medium">
+        <span className="line-through text-gray-500 mr-2">₹{originalPrice}</span>
+        <span className="text-black dark:text-white">₹{discountPrice}</span>
+      </div>
 
-        <h1 
-        className='font-medium md:text-xl text-sm font-sans'>
-          <span 
-          className='font-normal line-through opacity-80'>
-          {price}</span>  
-        {" " + disPrice }</h1>
-
+      {/* Optional USD Price */}
+      {/* <p className="text-xs text-gray-400 mt-1">~{usdPrice}</p> */}
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

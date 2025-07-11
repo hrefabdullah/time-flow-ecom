@@ -1,9 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const ResultProducts = ({ results = [] }) => {
+  const search = useSelector((state) => state.searchInput);
+
   return (
     <div className="px-4 py-6">
-      <h2 className="text-xl font-semibold mb-6">Search Results</h2>
+      {search ? (
+        <h2 className="text-xl font-semibold mb-6">
+          Search Results (<span>{results.length}</span>)
+        </h2>
+      ) : (
+        <h1 className="text-xl font-semibold mb-6">All Products</h1>
+      )}
 
       {results.length === 0 ? (
         <p className="text-gray-500 text-sm">No matching products found.</p>
@@ -20,11 +29,11 @@ const ResultProducts = ({ results = [] }) => {
               </div>
 
               {/* Product Image */}
-              <div className="w-full h-44 bg-white overflow-hidden">
+              <div className="w-full h-44 bg-white overflow-hidden place-items-center p-2">
                 <img
                   src={product.img1}
                   alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-[200px] object-contain h-[170px] transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 

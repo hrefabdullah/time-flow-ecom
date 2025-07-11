@@ -12,6 +12,7 @@ import Testimonials from './components/Testimonials';
 import SearchBox from './components/SearchBox';
 import ResultProducts from './components/ResultProducts';
 import findingDat from './utils/searchProducts';
+import ProductDetails from './components/ProductDetail';
 
 const App = () => {
 
@@ -27,7 +28,7 @@ const App = () => {
     <div className={`overflow-hidden ${isDark ? 'bg-[#101019] text-white' : 'bg-white'} transition-colors duration-300 text-center font-[poppins]`}>
       <Navbar isDark={isDark} />
       {/* {isSearchBox ? <SearchBox /> : ''} */}
-      <ResultProducts results={arr} />
+      {/* <ResultProducts results={arr} /> */}
       {/* {isSidebar ? <Sidebar /> : ''}
       {isCartSidebar ? <CartSidebar />: ''}  
       <Crousal />
@@ -36,8 +37,9 @@ const App = () => {
       <Category type={'gender'} />   
       <Cataloge name={'Best Sellers'} type={'best'} />
       <Category type={'brands'} />
-      <Testimonials />
-      <Footer /> */}
+      <Testimonials /> */}
+      <ProductDetails />
+      <Footer /> 
     </div>
   );
 };

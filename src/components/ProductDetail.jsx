@@ -3,19 +3,19 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const mockProduct = {
-  id: 50,
-  name: "Zoop Frozen Watch",
-  brand: "Zoop",
-  type: "Analog",
-  dialColor: "Blue",
-  color: "White",
-  price: 1295,
-  ratings: 4.5,
-  gender: "kids",
-  strap: "rubber",
-  img1: "https://m.media-amazon.com/images/I/614JNndcDOS._SX522_.jpg",
-  img2: "https://m.media-amazon.com/images/I/61pbgoOa0GS._SX522_.jpg",
-  img3: "https://m.media-amazon.com/images/I/51UbleSF7MS._SX522_.jpg",
+        id: 24,
+        name: 'Fasttrack Exuberant Bold' ,
+        brand: 'Fasttrack',
+        type: 'Analog',
+        dialColor: 'Midnight Blue',
+        color: 'Brown',
+        price: 5195,
+        ratings: 4,
+        gender: 'men',
+        strap: 'leather',
+        img1: 'https://m.media-amazon.com/images/I/71ya55+U8dL._SX522_.jpg',
+        img4: 'https://m.media-amazon.com/images/I/61XRE+p1HDL._SX522_.jpg',
+        img6: 'https://m.media-amazon.com/images/I/71c0WuiA5zL._SX522_.jpg'
 };
 
 const mockReviews = [
@@ -63,7 +63,7 @@ const ProductDetails = () => {
       </nav>
 
       <div
-        className={`grid md:grid-cols-2 gap-14 rounded-2xl shadow-lg p-8 lg:h-[84vh] overflow-y-auto ${cardBgClass}`}
+        className={`grid md:grid-cols-2 gap-14 rounded-2xl shadow-lg p-8 lg:h-[84vh] lg:overflow-y-auto ${cardBgClass}`}
       >
         {/* Left: Images */}
         <div>
@@ -75,7 +75,7 @@ const ProductDetails = () => {
             />
           </div>
           <div className="flex gap-4 mt-6 justify-center">
-            {[mockProduct.img1, mockProduct.img2, mockProduct.img3].map((img, i) => (
+            {[mockProduct.img1, mockProduct.img4, mockProduct.img6].map((img, i) => (
               <img
                 key={i}
                 src={img}
@@ -93,7 +93,7 @@ const ProductDetails = () => {
 
         {/* Right: Details with hidden scrollbar but scroll enabled */}
         <div
-          className="flex flex-col justify-between overflow-y-auto h-[70vh]"
+          className="flex flex-col justify-between lg:overflow-y-auto lg:h-[70vh]"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} // Firefox + IE/Edge
         >
           <div>
@@ -127,12 +127,7 @@ const ProductDetails = () => {
             <div className={`mt-8 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
               <h2 className="text-2xl font-bold mb-3">Product Description</h2>
               <p>
-                This Zoop Frozen Watch is a perfect blend of style and
-                functionality. Designed for kids, it features a durable rubber
-                strap and a vibrant blue dial color that stands out.
-                Comfortable to wear all day, this analog watch is great for
-                everyday use and special occasions alike. Water-resistant and
-                built to last, it ensures your child stays punctual and stylish.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. In nemo obcaecati odio delectus provident eaque sequi incidunt recusandae, perferendis cupiditate dolore repudiandae dolorem eius hic suscipit accusantium sed laudantium! Doloribus laboriosam consectetur hic, nihil, atque minima dolorum architecto distinctio id aliquid et, autem eaque saepe nemo! 
               </p>
             </div>
           </div>

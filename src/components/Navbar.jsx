@@ -4,12 +4,16 @@ import { toggleSidebar } from '../features/sidebar/sidebar.js';
 import { IoMoonSharp, IoSunny, IoSearch, IoMenuSharp } from "react-icons/io5";
 import { FaShoppingBag } from "react-icons/fa"
 import { toggleCart } from '../features/cart/cart.js';
+import { toggleSearchBox } from '../features/search/searchBox.js';
+import { DiAptana } from 'react-icons/di';
+import { addItem } from '../features/search/searchInput.js';
 
 const Navbar = ({ isDark }) => {
 
     const dispatch = useDispatch()
 
     const cartLength = useSelector((state) => state.userCart)
+    console.log(useSelector((state) => state.searchInput))
 
     const handleSidebar = () => {
         dispatch(toggleSidebar())
@@ -35,7 +39,7 @@ const Navbar = ({ isDark }) => {
             </ul>
             <div className='flex gap-4 text-lg lg:text-xl px-3 '>
                 <div className={`bg-white flex w-max px-3 py-1 rounded-full border-[1.5px]`}>
-                    <input className={`w-[80px] md:w-[160px] text-xs px-1 py-0.5 focus:outline-none text-[#101019]`} placeholder='Search' type="text" />
+                    <input onFocus={() => dispatch(toggleSearchBox())} onChange={(e) => dispatch(addItem(e.target.value))} className={`w-[80px] md:w-[160px] text-xs px-1 py-0.5 focus:outline-none text-[#101019]`} placeholder='Search' type="text" />
                     <button className='text-[#101019]'><IoSearch /></button>
                 </div>
                 <button className='hidden md:inline' onClick={() => dispatch(toggleDarkMode())}>

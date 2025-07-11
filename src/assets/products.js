@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 1,
-        name: 'Metal Neo',
+        name: 'Titan Metal Neo',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'black',
@@ -17,7 +17,7 @@ export const products = [
     },
     {
         id: 2,
-        name: 'Karishma',
+        name: 'Titan Karishma',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'black',
@@ -32,7 +32,7 @@ export const products = [
     },
     {
         id: 3,
-        name: 'Karishma',
+        name: 'Titan Karishma',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'white',
@@ -48,7 +48,7 @@ export const products = [
     },
     {
         id: 4,
-        name: 'Neo',
+        name: 'Titan Neo',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Brown',
@@ -63,7 +63,7 @@ export const products = [
     },
     {
         id: 5,
-        name: 'Neo',
+        name: 'Titan Neo',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Dark Blue',
@@ -78,7 +78,7 @@ export const products = [
     },
     {
         id: 6,
-        name: 'Neo Splash Quartz',
+        name: 'Titan Neo Splash Quartz',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Midnight Blue',
@@ -93,7 +93,7 @@ export const products = [
     },
     {
         id: 7,
-        name: 'Raga Viva',
+        name: 'Titan Raga Viva',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Rose Gold',
@@ -109,7 +109,7 @@ export const products = [
     },
     {
         id: 8,
-        name: 'Raga Viva Autumn',
+        name: 'Titan Raga Viva Autumn',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Rose Gold',
@@ -124,7 +124,7 @@ export const products = [
     },
     {
         id: 9,
-        name: 'Raga Viva Trendsetter',
+        name: 'Titan Raga Viva Trendsetter',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Rose Gold',
@@ -139,7 +139,7 @@ export const products = [
     },
     {
         id: 10,
-        name: 'Ladies Neo-li',
+        name: 'Titan Ladies Neo-li',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Midnight Blue',
@@ -155,7 +155,7 @@ export const products = [
     },
     {
         id: 11,
-        name: 'Pure Gears X',
+        name: 'Timex Pure Gears X',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Silver',
@@ -170,7 +170,7 @@ export const products = [
     },
     {
         id: 12,
-        name: 'Pure Gears X',
+        name: 'Timex Pure Gears X',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Silver',
@@ -186,7 +186,7 @@ export const products = [
     
     {
         id: 13,
-        name: 'Ultra Gears',
+        name: 'Timex Ultra Gears',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Silver',
@@ -201,7 +201,7 @@ export const products = [
     },
     {
         id: 14,
-        name: 'Marlin Classic',
+        name: 'Timex Marlin Classic',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Black',
@@ -217,7 +217,7 @@ export const products = [
     },
     {
         id: 15,
-        name: 'Marlin Bold',
+        name: 'Timex Marlin Bold',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Black',
@@ -232,7 +232,7 @@ export const products = [
     },
     {
         id: 16,
-        name: 'Q Round',
+        name: 'Timex Q Round',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Black',
@@ -247,7 +247,7 @@ export const products = [
     },
     {
         id: 17,
-        name: 'Rose Queen',
+        name: 'Timex Rose Queen',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Rose gold',
@@ -263,7 +263,7 @@ export const products = [
     },
     {
         id: 18,
-        name: 'Rose Queen X',
+        name: 'Timex Rose Queen X',
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Rose gold',
@@ -278,7 +278,7 @@ export const products = [
     },
     {
         id: 19,
-        name: 'Pure Sky' ,
+        name: 'Timex Pure Sky' ,
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Blue',
@@ -293,7 +293,7 @@ export const products = [
     },
     {
         id: 20,
-        name: 'Rose Bloom' ,
+        name: 'Timex Rose Bloom' ,
         brand: 'Timex',
         type: 'Analog',
         dialColor: 'Rose gold',
@@ -309,7 +309,7 @@ export const products = [
     },
     {
         id: 21,
-        name: 'Exuberant Quartz' ,
+        name: 'Fasttrack Exuberant Quartz' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Black',
@@ -324,7 +324,7 @@ export const products = [
     },
     {
         id: 22,
-        name: 'Exuberant Quartz' ,
+        name: 'Fasttrack Exuberant Quartz' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Brown',
@@ -339,7 +339,7 @@ export const products = [
     },
     {
         id: 23,
-        name: 'Exuberant Quartz' ,
+        name: 'Fasttrack Exuberant Quartz' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Royal Blue',
@@ -354,7 +354,7 @@ export const products = [
     },
     {
         id: 24,
-        name: 'Exuberant Bold' ,
+        name: 'Fasttrack Exuberant Bold' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Midnight Blue',
@@ -369,7 +369,7 @@ export const products = [
     },
     {
         id: 25,
-        name: 'Exuberant Bold' ,
+        name: 'Fasttrack Exuberant Bold' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'White',
@@ -384,7 +384,7 @@ export const products = [
     },
     {
         id: 26,
-        name: 'Glitch QUartz' ,
+        name: 'Fasttrack Glitch QUartz' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Silver',
@@ -399,7 +399,7 @@ export const products = [
     },
     {
         id: 27,
-        name: 'Glitch Quartz' ,
+        name: 'Fasttrack Glitch Quartz' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Brown',
@@ -414,7 +414,7 @@ export const products = [
     },
     {
         id: 28,
-        name: 'Glitch Quartz' ,
+        name: 'Fasttrack Glitch Quartz' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Black',
@@ -429,7 +429,7 @@ export const products = [
     },
     {
         id: 29,
-        name: 'Glitch Chain' ,
+        name: 'Fasttrack Glitch Chain' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Midnight Black',
@@ -444,7 +444,7 @@ export const products = [
     },
     {
         id: 30,
-        name: 'Glitch Chain' ,
+        name: 'Fasttrack Glitch Chain' ,
         brand: 'Fasttrack',
         type: 'Analog',
         dialColor: 'Rose Gold',
@@ -459,7 +459,7 @@ export const products = [
     },
     {
         id: 31,
-        name: 'Twist Round' ,
+        name: 'Noise Twist Round' ,
         brand: 'Noise',
         type: 'Smart',
         dialColor: 'Black',
@@ -474,7 +474,7 @@ export const products = [
     }, 
     {
         id: 32,
-        name: 'Lunar Discovery' ,
+        name: 'BoAt Lunar Discovery' ,
         brand: 'BoAt',
         type: 'Smart',
         dialColor: 'Black',
@@ -489,7 +489,7 @@ export const products = [
     }, //
     {
         id: 33,
-        name: 'Twist Go' ,
+        name: 'Noise Twist Go' ,
         brand: 'Noise',
         type: 'Smart',
         dialColor: 'Black',
@@ -504,7 +504,7 @@ export const products = [
     },
     {
         id: 34,
-        name: 'Twist Round' ,
+        name: 'Noise Twist Round' ,
         brand: 'Noise',
         type: 'Smart',
         dialColor: 'Black',
@@ -519,7 +519,7 @@ export const products = [
     }, //
     {
         id: 35,
-        name: 'Noir Pro' ,
+        name: 'Fasttrack Noir Pro' ,
         brand: 'Fasttrack',
         type: 'Smart',
         dialColor: 'Black',
@@ -534,8 +534,8 @@ export const products = [
     },
     {
         id: 36,
-        name: 'LimitLess' ,
-        brand: 'Fasttarck',
+        name: 'Fasttrack LimitLess' ,
+        brand: 'Fasttrack',
         type: 'Smart',
         dialColor: 'Black',
         color: 'Dark Green',
@@ -549,7 +549,7 @@ export const products = [
     },
     {
         id: 37,
-        name: 'Vortex Plus' ,
+        name: 'Noise Vortex Plus' ,
         brand: 'Noise',
         type: 'Smart',
         dialColor: 'Black',
@@ -564,7 +564,7 @@ export const products = [
     },
     {
         id: 38,
-        name: 'Endeavour Rugged' ,
+        name: 'Noise Endeavour Rugged' ,
         brand: 'Noise',
         type: 'Smart',
         dialColor: 'Black',
@@ -579,7 +579,7 @@ export const products = [
     },
     {
         id: 39,
-        name: 'Halo 2' ,
+        name: 'Noise Halo 2' ,
         brand: 'Noise',
         type: 'Smart',
         dialColor: 'Silver',
@@ -594,7 +594,7 @@ export const products = [
     },
     {
         id: 40,
-        name: 'Pro 6 Max' ,
+        name: 'Noise Pro 6 Max' ,
         brand: 'Noise',
         type: 'Smart',
         dialColor: 'Black',
@@ -609,7 +609,7 @@ export const products = [
     }, //
     {
         id: 41,
-        name: 'Little Ponny' ,
+        name: 'Spiky Little Ponny' ,
         brand: 'Spiky',
         type: 'Analog',
         dialColor: 'White',
@@ -624,7 +624,7 @@ export const products = [
     },
     {
         id: 42,
-        name: 'Little Astro' ,
+        name: 'Spiky Little Astro' ,
         brand: 'Spiky',
         type: 'Analog',
         dialColor: 'Silver',
@@ -639,7 +639,7 @@ export const products = [
     },
     {
         id: 43,
-        name: 'Purple Butterfly' ,
+        name: 'Spiky Purple Butterfly' ,
         brand: 'Spiky',
         type: 'Analog',
         dialColor: 'Pink',
@@ -654,7 +654,7 @@ export const products = [
     },
     {
         id: 44,
-        name: 'Kid Captain' ,
+        name: 'Matrix Kid Captain' ,
         brand: 'Matrix',
         type: 'Digital',
         dialColor: 'Blue',
@@ -669,7 +669,7 @@ export const products = [
     },
     {
         id: 45,
-        name: 'Kid Ben 10' ,
+        name: 'Matrix Kid Ben 10' ,
         brand: 'Matrix',
         type: 'Digital',
         dialColor: 'Green',
@@ -684,7 +684,7 @@ export const products = [
     },
     {
         id: 46,
-        name: 'Micky Mouse' ,
+        name: 'Matrix Micky Mouse' ,
         brand: 'Matrix',
         type: 'Digital',
         dialColor: 'Pink',
@@ -699,7 +699,7 @@ export const products = [
     },
     {
         id: 47,
-        name: 'Blue Boat' ,
+        name: 'Zoop Blue Boat' ,
         brand: 'Zoop',
         type: 'Analog',
         dialColor: 'White',
@@ -714,7 +714,7 @@ export const products = [
     },
     {
         id: 48,
-        name: 'Cap Shield' ,
+        name: 'Zoop Cap Shield' ,
         brand: 'Zoop',
         type: 'Analog',
         dialColor: 'White',
@@ -729,7 +729,7 @@ export const products = [
     },
     {
         id: 49,
-        name: 'Spiderman mash' ,
+        name: 'Zoop Spiderman mash' ,
         brand: 'Zoop',
         type: 'Analog',
         dialColor: 'Red',
@@ -744,7 +744,7 @@ export const products = [
     },
     {
         id: 50,
-        name: 'Frozen Watch' ,
+        name: 'Zoop Frozen Watch' ,
         brand: 'Zoop',
         type: 'Analog',
         dialColor: 'Blue',

@@ -1,6 +1,6 @@
 import ResultProducts from './components/ResultProducts';
 import ProductDetails from './components/ProductDetail';
-import CheckoutPage from './components/checkoutPage';
+import CheckoutPage from './components/CheckoutPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import findingDat from './utils/searchProducts.js';

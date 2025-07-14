@@ -7,13 +7,14 @@ import { toggleCart } from '../features/cart/cart.js';
 import { toggleSearchBox } from '../features/search/searchBox.js';
 import { DiAptana } from 'react-icons/di';
 import { addItem } from '../features/search/searchInput.js';
+import { Link } from 'react-router-dom';
 
-const Navbar = ({ isDark }) => {
+const Navbar = () => {
 
     const dispatch = useDispatch()
+    const isDark = useSelector((state) => state.darkMode)
 
     const cartLength = useSelector((state) => state.userCart)
-    console.log(useSelector((state) => state.searchInput))
 
     const handleSidebar = () => {
         dispatch(toggleSidebar())
@@ -25,12 +26,12 @@ const Navbar = ({ isDark }) => {
 
 
     return (
-        <div className='w-[100%] min-h-[60px] h-[8vh] md:h-[9vh] border-b-1 flex justify-between items-center md:px-[30px] px-[20px] z-5'>
-            <div className='flex items-center gap-[3px]'>
+        <div className={`${ isDark ? 'bg-[#101019] text-white' : 'bg-white text-[#101019]'} w-[100%] min-h-[60px] h-[8vh] md:h-[9vh] border-b-1 flex justify-between items-center md:px-[30px] px-[20px] z-5 `}>
+            <Link to={'/'} className='flex items-center gap-[3px]'>
                 <h1 className='font-semibold text-md md:text-lg lg:text-2xl cursor-pointer '>T1MEFLOW</h1>
                 <div className='h-3 lg:h-4.5 w-1 bg-blue-700 rotate-14'></div>
                 <div className='h-3 lg:h-4.5 w-1 bg-blue-300 rotate-14 lg:mr-20'></div>
-            </div>
+            </Link>
             <ul className='hidden md:flex justify-between gap-4 text-sm lg:text-md cursor-pointer'>
                 <li className=' hover:border-b-1 py-2'>Best Sellers</li>
                 <li className=' hover:border-b-1 py-2'>Latest Arrivals</li>

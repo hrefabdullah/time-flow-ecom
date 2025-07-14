@@ -12,8 +12,8 @@ const ProductCard = ({ item }) => {
   return (
     <div
       className={`bg-white ${
-        isDark ? 'bg-gray-800 text-white' : 'bg-white text-black'
-      } rounded-xl shadow-md p-4 flex flex-col items-center hover:scale-[1.02] transition-transform duration-300 cursor-pointer w-full h-full`}
+        isDark ? 'text-[#101019]' : 'bg-white text-black'
+      } rounded-xl shadow-md p-4 flex flex-col items-center hover:scale-[1.02] transition-transform duration-300 cursor-pointer w-full max-w-[150px] lg:max-w-[230px] h-full`}
     >
       {/* Image with hover effect */}
       <div className="w-full flex justify-center items-center mb-3 h-[140px] md:h-[180px] lg:h-[200px] overflow-hidden">
@@ -27,17 +27,17 @@ const ProductCard = ({ item }) => {
       </div>
 
       {/* Product Brand */}
-      <h2 className="text-sm md:text-base font-semibold mb-1 truncate">{item.brand}</h2>
+      <h2 className="text-sm md:text-base font-semibold mb-1">{item.brand}</h2>
 
       {/* Product Name */}
-      <p className="text-xs md:text-sm text-gray-500 dark:text-gray-300 mb-2 text-center line-clamp-2">
+      <p className="text-xs md:text-sm mb-2 text-center w-[120px] line-clamp-3">
         {item.name}
       </p>
 
       {/* Pricing */}
       <div className="text-sm md:text-base font-medium">
-        <span className="line-through text-gray-500 mr-2">₹{originalPrice}</span>
-        <span className="text-black dark:text-white">₹{discountPrice}</span>
+        <span className="line-through opacity-75 mr-2">₹{originalPrice}</span>
+        <span className='font-semibold'>₹{discountPrice}</span>
       </div>
 
       {/* Optional USD Price */}

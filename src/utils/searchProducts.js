@@ -35,6 +35,17 @@ const findingDat = (name) => {
 
 export default findingDat
 
+const filterbyBrand = (name) => {
+    const arr = products.filter((elem) => elem.brand.toLowerCase() === name.toLowerCase())
+    return arr
+}
+
+const filterbyGender = (name) => {
+    const arr = products.filter((elem) => elem.gender.toLowerCase() === name.toLowerCase())
+    return arr
+}
+
+export { filterbyBrand, filterbyGender } 
 
 // function findBrands(){
 //     const brands = [products[0].brand]

@@ -2,6 +2,9 @@ import React from 'react'
 import ProductCard from './ProductCard'
 import { products } from '../assets/products.js'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+
+
 const Cataloge = ({ name, type }) => {
 
   const isDark = useSelector((state) => state.darkMode)
@@ -32,9 +35,9 @@ const Cataloge = ({ name, type }) => {
       }} 
       className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
-        <ProductCard item={products[2]} />
-        <ProductCard item={products[19]} />
-        <ProductCard item={products[21]} />
+        <Link to={`/products/2`}><ProductCard item={products[2]} /></Link>
+        <Link to={`/products/19`}><ProductCard item={products[19]} /></Link>
+        <Link to={`/products/21`}><ProductCard item={products[21]} /></Link>
 
       </div> 
       : 
@@ -44,10 +47,12 @@ const Cataloge = ({ name, type }) => {
         scrollbarWidth: 'none',
         msOverflowStyle: 'none'
       }} 
-      className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-start items-center`}>
+      className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
-        {best.slice(0, 4).map((item, idx) => (
+        {best.slice(0, 4).map((item, idx) =>  (
+            <Link to={`/products/${item.id}`}> 
           <ProductCard key={idx} item={item} />
+          </Link>
         ))}
 
       </div>}

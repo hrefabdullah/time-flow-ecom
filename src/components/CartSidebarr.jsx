@@ -7,6 +7,7 @@ import CartSideItem from './CartSideItem.jsx';
 import { CiMoneyCheck1 } from "react-icons/ci";
 import { RiDeleteBin7Fill } from "react-icons/ri";
 import { empty } from '../features/cart/userCart.js';
+import { Link } from 'react-router-dom'
 
 const CartSidebarr = () => {
 
@@ -46,7 +47,7 @@ const CartSidebarr = () => {
                     ))}
                     <div className='flex gap-3 place-self-center'>
                         <div className='flex items-center text-xl font-semibold bg-zinc-800 w-max px-3 py-2 rounded-lg text-white gap-3'>
-                            <button>Buy</button>
+                            <Link to={`/checkout`}>Buy</Link>
                             <CiMoneyCheck1 />
                         </div>
                         <div className='flex items-center text-xl font-semibold bg-red-500 w-max px-2 py-2 rounded-lg text-white gap-3'>

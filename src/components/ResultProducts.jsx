@@ -2,15 +2,29 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { useParams } from 'react-router-dom';
-import { filterbyBrand, filterbyGender } from '../utils/searchProducts';
+import { Link, useParams } from 'react-router-dom';
+import { allBrands, allCategory, filterbyBrand, filterbyGender } from '../utils/searchProducts';
 
 const ResultProducts = ({ results = [] }) => {
 
+  const brands = allBrands
+  const category = allCategory
+
   const { name } = useParams()
-  if(name){
-    results = filterbyBrand(name)
-  }
+
+  brands.forEach(elem => {
+    if(name === elem.toLowerCase()){
+      results = filterbyBrand(name)
+    } else return
+  });
+
+  category.forEach(elem => {
+    if(name === elem.toLowerCase()){
+      results = filterbyGender(name)
+    } else return
+  });
+
+  console.log(results)
 
   const search = useSelector((state) => state.searchInput);
 
@@ -31,7 +45,7 @@ const ResultProducts = ({ results = [] }) => {
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
             {results.map((product) => (
-              <div
+              <Link to={`/product/${product.id}`}
                 key={product.id}
                 className="bg-white border border-gray-200 rounded-sm overflow-hidden cursor-pointer group hover:shadow-sm transition relative"
               >
@@ -50,15 +64,15 @@ const ResultProducts = ({ results = [] }) => {
                 </div>
 
                 {/* Product Info */}
-                <div className="p-2">
+                <div className="p-2 flex flex-col items-center">
                   <p className="text-gray-800 text-sm font-medium truncate">{product.brand}</p>
                   <p className="text-gray-500 text-xs truncate">{product.name}</p>
                   <p className="text-gray-600 text-xs mt-1 capitalize">
                     {product.color} • {product.gender}
                   </p>
-                  <p className="text-black text-sm font-semibold mt-1">₹{product.price}</p>
+                  <p className="text-black  font-semibold mt-1">₹{product.price}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}

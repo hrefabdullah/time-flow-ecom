@@ -35,9 +35,9 @@ const Cataloge = ({ name, type }) => {
       }} 
       className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
-        <Link to={`/products/2`}><ProductCard item={products[2]} /></Link>
-        <Link to={`/products/19`}><ProductCard item={products[19]} /></Link>
-        <Link to={`/products/21`}><ProductCard item={products[21]} /></Link>
+        <Link to={`/product/2`}><ProductCard item={products[2]} /></Link>
+        <Link to={`/product/19`}><ProductCard item={products[19]} /></Link>
+        <Link to={`/product/21`}><ProductCard item={products[21]} /></Link>
 
       </div> 
       : 
@@ -50,8 +50,8 @@ const Cataloge = ({ name, type }) => {
       className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
         {best.slice(0, 4).map((item, idx) =>  (
-            <Link to={`/products/${item.id}`}> 
-          <ProductCard key={idx} item={item} />
+            <Link key={idx} to={`/product/${item.id}`}> 
+          <ProductCard  item={item} />
           </Link>
         ))}
 

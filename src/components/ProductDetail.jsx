@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { products } from "../assets/products";
+import { products } from "../assets/products.js";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { addItemCart } from "../features/cart/userCart.js";
+
 
 const mockReviews = [
   {
@@ -32,6 +34,9 @@ const mockReviews = [
 ];
 
 const ProductDetails = () => {
+
+  const dispatch = useDispatch()
+
   const { id } = useParams();
   const product = products[id]
   const [mainImage, setMainImage] = useState(product.img1);
@@ -107,7 +112,7 @@ const ProductDetails = () => {
                 <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition">
                   Buy Now
                 </button>
-                <button className="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-3 rounded-lg shadow-md transition">
+                <button onClick={() => dispatch(addItemCart(), product.id)} className="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-3 rounded-lg shadow-md transition">
                   Add to Cart
                 </button>
               </div>

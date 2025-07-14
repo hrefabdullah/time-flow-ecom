@@ -14,16 +14,10 @@ import { useSelector } from 'react-redux'
 const Home = () => {
 
     const isDark = useSelector((state) => state.darkMode);
-    const isSidebar = useSelector((state) => state.sidebar)
-    const isCartSidebar = useSelector((state) => state.cart)
-    const isSearchBox = useSelector((state) => state.searchBox)
 
     return (
         <div className={`overflow-hidden ${isDark ? 'bg-[#101019] text-white' : 'bg-white'} transition-colors duration-300 text-center font-[poppins]`}>
             <Navbar isDark={isDark} />
-            {isSearchBox ? <SearchBox /> : ''}
-            {isSidebar ? <Sidebar /> : ''}
-            {isCartSidebar ? <CartSidebarr /> : ''}
             <Crousal />
             <Cataloge name={'New Arrivals'} type={'new'} />
             <Quote />

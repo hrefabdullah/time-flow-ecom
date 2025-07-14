@@ -1,8 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { updateType } from '../features/search/filterSearch'
 
 const Category = ({ type }) => {
+
+    const dispatch = useDispatch()
 
     const isDark = useSelector((state) => state.darkMode)
 
@@ -28,7 +31,7 @@ const Category = ({ type }) => {
             <div
             className='w-full h-[30vh] md:h-[40vh] flex'>
                 {genders.map((elem, idx) => (
-                    <Link to={`/products/${genders.type}`}
+                    <Link to={`/products/${elem.type.toLowerCase()}`} onClick={() => dispatch(updateType(elem.toLowerCase()))}
                     className='relative flex w-full justify-center items-center text-white'
                     key={idx}>
                         <img
@@ -47,7 +50,7 @@ const Category = ({ type }) => {
                 className='text-2xl mb-5'
                 >Shop By Brand</h1>
                 {brands.map((elem, idx) => (
-                    <div
+                    <div onClick={() => dispatch(updateType(elem.toLowerCase()))}
                     className={`${isDark ? 'text-white hover:bg-white hover:text-[#101019]' : 'text-[#101019] hover:bg-[#101019] hover:text-white'} h-[5vh] border-b-1 p-7 w-full justify-center items-center flex`}
                     key={idx}>
                         <Link to={`/products/${elem.toLowerCase()}`}>{elem}</Link>

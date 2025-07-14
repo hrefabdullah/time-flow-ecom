@@ -37,7 +37,7 @@ const Sidebar = () => {
                 className={`place-self-end w-[50%] z-50 fixed top-0 right-0 h-full md:hidden p-5 ${isDark ? 'bg-[#13131a] text-white' : "bg-zinc-200 text-[#101019]"} transition-colors duration-300 `}>
                 <button onClick={closeSidebar}><RxCross2 className='absolute right-5 top-5 text-lg' /></button>
                 <div className='w-full flex justify-center my-5'>
-                    <div className='absolute top-[100px] right-[40%] h-5.5 w-5.5 rounded-full bg-blue-700 text-sm place-content-center'>
+                    <div className='absolute top-[100px] right-[40%] h-5.5 w-5.5 rounded-full bg-blue-700 text-sm flex items-center justify-center text-white'>
                         <h1>{cartLength.length}</h1>
                     </div>
                     <FaShoppingBag onClick={() => {

@@ -3,7 +3,7 @@ import { products } from "../../assets/products";
 
 const userCartSlice = createSlice({
     name: 'userCart',
-    initialState: [products[0]],
+    initialState: [],
     reducers: {
         addItemCart: (state, action) => {
             state.push(action.payload)

@@ -70,7 +70,7 @@ const ProductDetails = () => {
               />
             </div>
             <div className="flex gap-4 mt-6 justify-center">
-              {[product.img1, product.img4, product.img6].map((img, i) => (
+              {[product.img1, product.img2, product.img3].map((img, i) => (
                 <img
                   key={i}
                   src={img}
@@ -112,7 +112,7 @@ const ProductDetails = () => {
                 <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition">
                   Buy Now
                 </button>
-                <button onClick={() => dispatch(addItemCart(), product.id)} className="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-3 rounded-lg shadow-md transition">
+                <button onClick={() => dispatch(addItemCart(product))} className="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-3 rounded-lg shadow-md transition">
                   Add to Cart
                 </button>
               </div>

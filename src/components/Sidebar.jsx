@@ -20,6 +20,9 @@ const Sidebar = () => {
         dispatch(toggleSidebar())
     }
 
+    const cartItems = useSelector((state) => state.userCart)
+        console.log(cartItems)
+
 
     return (
         <>

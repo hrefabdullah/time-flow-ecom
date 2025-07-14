@@ -3,11 +3,11 @@ import { RxCross2 } from "react-icons/rx";
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemCart } from '../features/cart/userCart.js';
 
-const CartSideItem = ({ image, name, price, color, idx }) => {
+const CartSideItem = ({ image, name, price, idx }) => {
 
     const dispatch = useDispatch()
     const usdPrice = Math.round(price / 85.68)
-    const highPrice = Math.floor(usdPrice*2)
+    const highPrice = Math.floor(price*2)
 
     return (
         <div className='relative mt-5 w-[90%] lg:w-[80%] h-max p-3 rounded-lg bg-white text-[#101019]  shadow-lg'>
@@ -16,8 +16,8 @@ const CartSideItem = ({ image, name, price, color, idx }) => {
                 <h1 className='text-sm mb-1'>{name}
                 </h1>
             <h1 className='text-xl font-semibold flex'>
-                <span className='font-normal text-sm line-through mr-2 opacity-75'>${highPrice}</span>
-                ${usdPrice}
+                <span className='font-normal text-sm line-through mr-2 opacity-75'>₹{highPrice}</span>
+                ₹{price}
             </h1>
         </div>
     )

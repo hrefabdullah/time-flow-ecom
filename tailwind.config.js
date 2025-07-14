@@ -1,10 +1,12 @@
 module.exports = {
-    theme: {
-        extend: {
-            fontFamily: {
-                poppins: ['Poppins', 'sans-serif']
-            }
-        }
+  theme: {
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
-    plugins: []
-}
+  },
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
+};

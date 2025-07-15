@@ -45,7 +45,7 @@ const ResultProducts = ({ results = [] }) => {
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
             {results.map((product) => (
-              <Link to={`/product/${product.id}`}
+              <Link to={`/product/${product.id - 1}`}
                 key={product.id}
                 className="bg-white border border-gray-200 rounded-sm overflow-hidden cursor-pointer group hover:shadow-sm transition relative"
               >

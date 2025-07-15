@@ -50,7 +50,7 @@ const Cataloge = ({ name, type }) => {
       className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} p-2 h-full w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
         {best.slice(0, 4).map((item, idx) =>  (
-            <Link key={idx} to={`/product/${item.id}`}> 
+            <Link key={idx} to={`/product/${item.id - 1}`}> 
           <ProductCard  item={item} />
           </Link>
         ))}

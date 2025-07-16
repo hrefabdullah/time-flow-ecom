@@ -45,13 +45,13 @@ const ProductDetails = () => {
 
     dispatch(addItemCart(product))
     dispatch(addQuantity(userCart))
+    setShowPopup(true);
+
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2500);
 
   }
-
-
-
-
-
 
   const { id } = useParams();
   const product = products[id]
@@ -68,8 +68,16 @@ const ProductDetails = () => {
     return shuffled.slice(0, 4); // pick 4 suggestions
   }, [id]);
 
+  const [showPopup, setShowPopup] = useState(false);
+
+
   return (
     <>
+      {showPopup && (
+        <div className="fixed top-5 right-5 z-50 bg-blue-600 text-white px-4 py-2 rounded shadow-md animate-slide-in">
+          Added to cart!
+        </div>
+      )}
       <Navbar />
       <div
         className={`max-w-7xl mx-auto px-6 py-12 min-h-screen lg:min-h-[70vh] lg:h-max ${bgClass}`}
@@ -107,6 +115,7 @@ const ProductDetails = () => {
             </div>
           </div>
 
+          {/* Right: Details */}
           <div
             className="flex flex-col justify-between lg:overflow-y-auto lg:h-[70vh]"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -146,7 +155,6 @@ const ProductDetails = () => {
                 </p>
               </div>
             </div>
-
 
             {/* Specifications */}
             <div className="mt-12">
@@ -212,32 +220,33 @@ const ProductDetails = () => {
                 ))}
               </div>
             </div>
+
             {/* Suggestions */}
             <div className={`mt-12 ${isDark ? "bg-gray-800 text-gray-300" : "bg-white text-gray-800"
-                      }`}>
-                <h2 className={`text-2xl font-bold mb-6 border-b-4 pb-2 ${isDark ? "border-blue-500" : "border-blue-600"
-                  }`}>You may also like</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                  {suggestedProducts.map((item) => (
-                    <Link
-                      to={`/product/${item.id - 1}`}
-                      key={item.id}
-                      className={`border rounded-lg overflow-hidden hover:shadow-lg transition ${cardBgClass} ${borderClass}`}
-                    >
-                      <img
-                        src={item.img1}
-                        alt={item.name}
-                        className="w-full h-44 object-contain bg-white p-2"
-                      />
-                      <div className="p-3">
-                        <h3 className="text-sm font-semibold truncate">{item.name}</h3>
-                        <p className="text-xs text-gray-500 truncate">{item.brand}</p>
-                        <p className="font-bold  mt-1">₹{item.price}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+              }`}>
+              <h2 className={`text-2xl font-bold mb-6 border-b-4 pb-2 ${isDark ? "border-blue-500" : "border-blue-600"
+                }`}>You may also like</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                {suggestedProducts.map((item) => (
+                  <Link
+                    to={`/product/${item.id - 1}`}
+                    key={item.id}
+                    className={`border rounded-lg overflow-hidden hover:shadow-lg transition ${cardBgClass} ${borderClass}`}
+                  >
+                    <img
+                      src={item.img1}
+                      alt={item.name}
+                      className="w-full h-44 object-contain bg-white p-2"
+                    />
+                    <div className="p-3">
+                      <h3 className="text-sm font-semibold truncate">{item.name}</h3>
+                      <p className="text-xs text-gray-500 truncate">{item.brand}</p>
+                      <p className="font-bold  mt-1">₹{item.price}</p>
+                    </div>
+                  </Link>
+                ))}
               </div>
+            </div>
           </div>
         </div>
 

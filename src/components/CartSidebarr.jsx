@@ -16,6 +16,8 @@ const CartSidebarr = () => {
     const isCartSidebar = useSelector((state) => state.cart)
     const isDark = useSelector((state) => state.darkMode)
     const cartItems = useSelector((state) => state.userCart)
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
+
 
 
     const closeCartSidebar = () => {
@@ -59,7 +61,14 @@ const CartSidebarr = () => {
                     <button className={`${isDark ? 'bg-zinc-200 text-[#101019] active:bg-zinc-500' : 'bg-zinc-600 text-white active:bg-zinc-700'} py-1 px-3 text-sm rounded-lg`}>Go to store</button>
                 </div>
                 }
+                {cartItems.length > 0 && (
+                    <div className={`text-lg font-semibold text-center mt-6 ${isDark ? 'text-blue-400' : 'text-blue-800'}`}>
+                        Total: ₹{totalPrice}
+                    </div>
+                )}
+
                 <div className='flex gap-3 justify-center place-items-end h-full mt-7'>
+
                     <div className='flex items-center text-xl font-semibold bg-zinc-800 w-max px-3 py-2 rounded-lg text-white gap-3'>
                         <Link to={`/checkout`}>Buy</Link>
                         <CiMoneyCheck1 />

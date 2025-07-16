@@ -17,6 +17,7 @@ const CheckoutPage = () => {
   const { id } = useParams() 
   if(!id){
     userProducts = useSelector((state) => state.userCart)
+
     
   } else {
     product = products[id]
@@ -32,16 +33,16 @@ const CheckoutPage = () => {
   return (
     <>
       <Navbar />
-      <div className={`max-w-4xl mx-auto px-6 py-12 min-h-screen ${bgClass}`}>
+      <div className={`max-w-4xl mx-auto px-6 py-5 min-h-screen ${bgClass}`}>
 
-        <nav className={`mb-8 text-sm font-medium ${isDark ? "text-blue-400" : "text-blue-700"}`}>
+        <nav className={`mb-5 text-sm font-medium ${isDark ? "text-blue-400" : "text-blue-700"}`}>
           Home &gt; Checkout
         </nav>
 
-        <div className={`rounded-2xl shadow-lg p-8 border ${borderClass} ${cardBgClass}`}>
-          <h1 className="text-3xl font-bold mb-8">Checkout</h1>
+        <div className={`rounded-2xl shadow-lg p-6 border ${borderClass} ${cardBgClass}`}>
+          <h1 className="text-3xl font-bold mb-4">Checkout</h1>
 
-          { id ? ( <div className={`flex gap-6 mb-10 border ${borderClass} rounded-xl p-6`}>
+          { id ? ( <div className={`flex gap-6 mb-8 border ${borderClass} rounded-xl p-6`}>
             <img
               src={product.img1}
               alt={product.name}
@@ -56,26 +57,26 @@ const CheckoutPage = () => {
             </div>
           </div> ) : ( <div>
             { userProducts.map((elem, idx) => (
-              <div key={idx} className={`flex gap-6 mb-10 border ${borderClass} rounded-xl p-6`}>
+              <div key={idx} className={`flex gap-4 mb-6 border ${borderClass} rounded-xl p-6`}>
             <img
               src={elem.img1}
               alt={elem.name}
-              className="w-32 h-32 object-contain rounded-lg"
+              className="w-29 h-29 object-contain rounded-lg"
             />
             <div className="flex flex-col justify-center">
               <h2 className="text-xl font-semibold">{elem.name}</h2>
               <p className={`text-sm mt-1 ${isDark ? "text-gray-400" : "text-gray-500"}`}>
                 by {elem.brand}
               </p>
-              <p className="text-2xl font-bold mt-4 text-blue-500">₹{elem.price}</p>
+              <p className="text-2xl font-bold mt-2 text-blue-500">₹{elem.price}</p>
             </div>
           </div>
             ))}
           </div> )}
 
           <div className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">Shipping Information</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <h2 className="text-2xl font-semibold mb-6">Shipping Information</h2>
+            <div className="grid md:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="Full Name"
@@ -112,11 +113,11 @@ const CheckoutPage = () => {
             </div>
             <div className="flex justify-between text-lg font-medium mb-2">
               <span>Shipping</span>
-              <span>₹0</span>
+              <span>₹40</span>
             </div>
             <div className="flex justify-between text-xl font-bold border-t pt-4">
               <span>Total</span>
-              { id ? <span>₹{product.price}</span> : <span>₹{userProducts.reduce((acc, item) => acc + item.price, 0)}</span> }
+              { id ? <span>₹{product.price + 40}</span> : <span>₹{userProducts.reduce((acc, item) => acc + item.price, 0) + 40}</span> }
             </div>
           </div>
 

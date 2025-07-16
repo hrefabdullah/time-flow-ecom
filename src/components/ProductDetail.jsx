@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
@@ -38,28 +39,18 @@ const ProductDetails = () => {
 
   const dispatch = useDispatch()
   const userCart = useSelector((state) => state.userCart)
-  
+
 
   const handleCart = () => {
 
-    
     dispatch(addItemCart(product))
     dispatch(addQuantity(userCart))
-    
-    // productMap = {};
 
-    // userCart.forEach(item => {
-    //   if (productMap[item.id]) {
-    //     productMap[item.id].quantity += 1;
-    //   } else {
-    //     productMap[item.id] = { ...item, quantity: 2 };
-    //   }
-    // });
-
-    // return Object.values(productMap);
-    // console.log(productMap.quanity);
-    
   }
+
+
+
+
 
 
   const { id } = useParams();
@@ -71,6 +62,12 @@ const ProductDetails = () => {
   const cardBgClass = isDark ? "bg-gray-800" : "bg-white";
   const borderClass = isDark ? "border-gray-700" : "border-blue-100";
 
+  const suggestedProducts = useMemo(() => {
+    const others = products.filter((p, index) => index !== Number(id));
+    const shuffled = others.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 4); // pick 4 suggestions
+  }, [id]);
+
   return (
     <>
       <Navbar />
@@ -79,7 +76,7 @@ const ProductDetails = () => {
       >
         {/* Breadcrumb */}
         <nav className={`mb-8 text-xs lg:text-sm font-medium ${isDark ? "text-blue-400" : "text-blue-700"}`}>
-          Home &gt; Watches &gt; {product.brand} &gt; {product.name}
+          Home &gt; <Link to={`/products/${product.brand.toLowerCase()}`}>{product.brand}</Link> &gt; {product.name}
         </nav>
 
         <div
@@ -87,11 +84,11 @@ const ProductDetails = () => {
         >
           {/* Left: Images */}
           <div>
-            <div className={`border ${borderClass} rounded-xl p-5 shadow-sm`}>
+            <div className={`border ${borderClass} rounded-xl shadow-sm`}>
               <img
                 src={mainImage}
                 alt={product.name}
-                className="w-full h-[300px] md:h-[400px] object-contain select-none"
+                className="w-full h-[300px] md:h-[400px] object-contain select-none rounded-xl"
               />
             </div>
             <div className="flex gap-4 mt-6 justify-center">
@@ -215,8 +212,35 @@ const ProductDetails = () => {
                 ))}
               </div>
             </div>
+            {/* Suggestions */}
+            <div className={`mt-12 ${isDark ? "bg-gray-800 text-gray-300" : "bg-white text-gray-800"
+                      }`}>
+                <h2 className={`text-2xl font-bold mb-6 border-b-4 pb-2 ${isDark ? "border-blue-500" : "border-blue-600"
+                  }`}>You may also like</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                  {suggestedProducts.map((item) => (
+                    <Link
+                      to={`/product/${item.id - 1}`}
+                      key={item.id}
+                      className={`border rounded-lg overflow-hidden hover:shadow-lg transition ${cardBgClass} ${borderClass}`}
+                    >
+                      <img
+                        src={item.img1}
+                        alt={item.name}
+                        className="w-full h-44 object-contain bg-white p-2"
+                      />
+                      <div className="p-3">
+                        <h3 className="text-sm font-semibold truncate">{item.name}</h3>
+                        <p className="text-xs text-gray-500 truncate">{item.brand}</p>
+                        <p className="font-bold  mt-1">₹{item.price}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
           </div>
         </div>
+
       </div>
       <Footer />
     </>

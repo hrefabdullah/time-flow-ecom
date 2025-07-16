@@ -24,9 +24,10 @@ const Cataloge = ({ name, type }) => {
           className='text-lg md:text-2xl opacity-90'
         >{name}</h1>
 
-        {type === 'best' ? <button
+        {type === 'best' ? <Link
+          to={'/products/best'}
           className='place-self-end text-xs md:text-md border-1 rounded-full px-3 py-2 active:scale-95 hover:bg-white hover:text-[#101019]'
-        >View all</button> : ''}
+        >View all</Link> : ''}
       </div>
 
       {type === 'new' ? <div
@@ -35,7 +36,7 @@ const Cataloge = ({ name, type }) => {
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'
         }}
-        className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} h-max w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
+        className={`${isDark ? 'border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} h-max w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
         <Link to={`/product/2`}><ProductCard item={products[2]} /></Link>
         <Link to={`/product/19`}><ProductCard item={products[19]} /></Link>
@@ -49,7 +50,7 @@ const Cataloge = ({ name, type }) => {
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
           }}
-          className={`${isDark ? 'border-y-1 border-white text-[#101019]' : 'bg-[#101019] text-[#101019]'} h-max w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
+          className={`${isDark ? 'text-[#101019]' : 'bg-[#101019] text-[#101019]'} h-max w-full flex gap-4 whitespace-nowrap overflow-x-auto [&::-webkit-scrollbar]:hidden md:justify-center items-center`}>
 
           {best.slice(0, 4).map((item, idx) => (
             <Link key={idx} to={`/product/${item.id - 1}`}>

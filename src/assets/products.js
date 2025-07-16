@@ -93,7 +93,7 @@ export const products = [
     },
     {
         id: 7,
-        name: 'Titan Raga Viva',
+        name: 'Titan Raga Moon',
         brand: 'Titan',
         type: 'Analog',
         dialColor: 'Rose Gold',
@@ -103,9 +103,9 @@ export const products = [
         bestseller: true,
         gender: 'women',
         strap: 'metal',
-        img1: 'https://m.media-amazon.com/images/I/71SxGG76qpL._SX522_.jpg',
-        img2: 'https://m.media-amazon.com/images/I/71AVOteo5mL._SY355_.jpg',
-        img3: 'https://m.media-amazon.com/images/I/61Gw7jjXmJL._SY355_.jpg'
+        img1: 'https://m.media-amazon.com/images/I/71uGpWuIbrL._SX569_.jpg',
+        img2: 'https://m.media-amazon.com/images/I/71eilQYNoLL._SX522_.jpg',
+        img3: 'https://m.media-amazon.com/images/I/61cQRzg21AL._SX522_.jpg'
     },
     {
         id: 8,

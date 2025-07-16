@@ -7,6 +7,7 @@ import { FaGithub, FaLinkedinIn, FaShoppingBag } from "react-icons/fa";
 import { IoMoonSharp, IoSunny } from "react-icons/io5";
 import { motion } from 'motion/react';
 import { toggleCart } from '../features/cart/cart';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
 
@@ -21,7 +22,6 @@ const Sidebar = () => {
     }
 
     const cartItems = useSelector((state) => state.userCart)
-        console.log(cartItems)
 
 
     return (
@@ -49,10 +49,10 @@ const Sidebar = () => {
                     }} className='text-5xl' />
                 </div>
                 <ul className='flex flex-col items-start mt-8 text-[14px]'>
-                    <li>Home</li>
-                    <li>Store</li>
-                    <li>Categories</li>
-                    <li>About us</li>
+                    <Link to="/" onClick={() => dispatch(toggleSidebar())}>Home</Link>
+                    <Link to="/store" onClick={() => dispatch(toggleSidebar())}>Store</Link>
+                    <Link to="/categories" onClick={() => dispatch(toggleSidebar())}>Categories</Link>
+                    <Link to="/about" onClick={() => dispatch(toggleSidebar())}>About us</Link>
                     <button className='mt-2 text-lg' onClick={() => dispatch(toggleDarkMode())}>
                         {isDark ? <IoSunny /> : <IoMoonSharp />}
                     </button>

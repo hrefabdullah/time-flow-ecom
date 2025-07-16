@@ -23,7 +23,7 @@ const Category = ({ type }) => {
             url: 'https://images.unsplash.com/photo-1590003168429-4b47c1dd9b08?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FydG9vbiUyMHdhdGNoZXN8ZW58MHx8MHx8fDA%3D'
         }
     ]
-    const brands = ['Timex', 'Titan', 'Fasttrack', 'View all']
+    const brands = ['Timex', 'Titan', 'Fasttrack']
 
     return (
         <>
@@ -56,6 +56,7 @@ const Category = ({ type }) => {
                         <Link to={`/products/${elem.toLowerCase()}`}>{elem}</Link>
                     </div>
                 ))}
+                <Link to={`/products/brands`}>View all</Link>
             </div>}
         </>
     )

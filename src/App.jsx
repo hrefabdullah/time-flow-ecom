@@ -17,6 +17,7 @@ const App = () => {
 
   const searchVar = useSelector((state) => state.searchInput)
   const arr = findingDat(searchVar)
+  
 
   return (
     <Router>
@@ -29,6 +30,7 @@ const App = () => {
         <Route path='/products/:name' element={<ResultProducts />} />
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/checkout/:id' element={<CheckoutPage />} />
+        <Route path='/checkout' element={<CheckoutPage />} />
       </Routes>
     </Router>
   );

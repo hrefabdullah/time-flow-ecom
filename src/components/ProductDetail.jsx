@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { products } from "../assets/products.js";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { addItemCart } from "../features/cart/userCart.js";
+import { addQuantity } from "../features/cart/userCartQuan.js";
 
 
 const mockReviews = [
@@ -36,6 +37,30 @@ const mockReviews = [
 const ProductDetails = () => {
 
   const dispatch = useDispatch()
+  const userCart = useSelector((state) => state.userCart)
+  
+
+  const handleCart = () => {
+
+    
+    dispatch(addItemCart(product))
+    dispatch(addQuantity(userCart))
+    
+    // productMap = {};
+
+    // userCart.forEach(item => {
+    //   if (productMap[item.id]) {
+    //     productMap[item.id].quantity += 1;
+    //   } else {
+    //     productMap[item.id] = { ...item, quantity: 2 };
+    //   }
+    // });
+
+    // return Object.values(productMap);
+    // console.log(productMap.quanity);
+    
+  }
+
 
   const { id } = useParams();
   const product = products[id]
@@ -77,18 +102,17 @@ const ProductDetails = () => {
                   alt={`Thumbnail ${i + 1}`}
                   onClick={() => setMainImage(img)}
                   className={`w-16 h-16 md:w-24 md:h-24 object-contain border-2 rounded-lg cursor-pointer transition ${mainImage === img
-                      ? "border-blue-500 shadow-lg"
-                      : "border-transparent hover:border-blue-400"
+                    ? "border-blue-500 shadow-lg"
+                    : "border-transparent hover:border-blue-400"
                     }`}
                 />
               ))}
             </div>
           </div>
 
-          {/* Right: Details with hidden scrollbar but scroll enabled */}
           <div
             className="flex flex-col justify-between lg:overflow-y-auto lg:h-[70vh]"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} // Firefox + IE/Edge
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <div>
               <h1 className="text-3xl font-extrabold leading-tight">{product.name}</h1>
@@ -109,10 +133,10 @@ const ProductDetails = () => {
 
               {/* Buttons */}
               <div className="flex gap-6 mt-8">
-                <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition">
+                <Link to={`/checkout/${id}`} className="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition">
                   Buy Now
-                </button>
-                <button onClick={() => dispatch(addItemCart(product))} className="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-3 rounded-lg shadow-md transition">
+                </Link>
+                <button onClick={() => handleCart()} className="flex-1 bg-blue-100 hover:bg-blue-200 text-blue-700 font-semibold py-3 rounded-lg shadow-md transition">
                   Add to Cart
                 </button>
               </div>

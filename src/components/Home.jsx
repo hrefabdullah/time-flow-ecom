@@ -9,11 +9,12 @@ import Quote from './Quote'
 import Category from './Category'
 import Testimonials from './Testimonials'
 import Footer from './Footer'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Home = () => {
 
     const isDark = useSelector((state) => state.darkMode);
+    
 
     return (
         <div className={`overflow-hidden ${isDark ? 'bg-[#101019] text-white' : 'bg-white'} transition-colors duration-300 text-center font-[poppins]`}>

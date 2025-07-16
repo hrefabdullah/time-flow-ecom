@@ -16,7 +16,6 @@ const CartSidebarr = () => {
     const isCartSidebar = useSelector((state) => state.cart)
     const isDark = useSelector((state) => state.darkMode)
     const cartItems = useSelector((state) => state.userCart)
-    console.log(cartItems)
 
 
     const closeCartSidebar = () => {

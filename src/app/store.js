@@ -6,6 +6,7 @@ import userCartReducer from '../features/cart/userCart.js'
 import searchBoxReducer from '../features/search/searchBox.js'
 import searchInputReducer from '../features/search/searchInput.js'
 import filterReducer from '../features/search/filterSearch.js'
+import userQtyReducer from '../features/cart/userCartQuan.js'
 
 export const store = configureStore({
     reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
         userCart: userCartReducer,
         searchBox: searchBoxReducer,
         searchInput: searchInputReducer,
-        filter: filterReducer
+        filter: filterReducer,
+        quantity: userQtyReducer
     }
 });

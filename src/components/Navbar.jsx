@@ -40,7 +40,7 @@ const Navbar = () => {
             </ul>
             <div className='flex gap-4 text-lg lg:text-xl px-3 '>
                 <div className={`bg-white flex w-max px-3 py-1 rounded-full border-[1.5px]`}>
-                    <input onFocus={() => dispatch(toggleSearchBox())} onChange={(e) => dispatch(addItem(e.target.value))} className={`w-[80px] md:w-[160px] text-xs px-1 py-0.5 focus:outline-none text-[#101019]`} placeholder='Search' type="text" />
+                    <input onClick={() => dispatch(toggleSearchBox())} onChange={(e) => dispatch(addItem(e.target.value))} onMouseOut={() => dispatch(toggleSearchBox())} className={`w-[80px] md:w-[160px] text-xs px-1 py-0.5 focus:outline-none text-[#101019]`} placeholder='Search' type="text" />
                     <button className='text-[#101019]'><IoSearch /></button>
                 </div>
                 <button className='hidden md:inline' onClick={() => dispatch(toggleDarkMode())}>

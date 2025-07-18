@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 import { products } from "../assets/products";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 
 const CheckoutPage = () => {
@@ -127,6 +128,7 @@ const CheckoutPage = () => {
         </div>
       </div>
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 };

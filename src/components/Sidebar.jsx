@@ -48,11 +48,11 @@ const Sidebar = () => {
                         dispatch(toggleSidebar())
                     }} className='text-5xl' />
                 </div>
-                <ul className='flex flex-col items-start mt-8 text-[14px]'>
+                <ul className='flex flex-col items-start mt-8 text-[16px]'>
                     <Link to="/" onClick={() => dispatch(toggleSidebar())}>Home</Link>
                     <Link to="/store" onClick={() => dispatch(toggleSidebar())}>Store</Link>
-                    <Link to="/categories" onClick={() => dispatch(toggleSidebar())}>Categories</Link>
-                    <Link to="/about" onClick={() => dispatch(toggleSidebar())}>About us</Link>
+                    <Link to="/categories" onClick={() => dispatch(toggleSidebar())}>About us</Link>
+                    <Link to="/about" onClick={() => dispatch(toggleSidebar())}>Contact us</Link>
                     <button className='mt-2 text-lg' onClick={() => dispatch(toggleDarkMode())}>
                         {isDark ? <IoSunny /> : <IoMoonSharp />}
                     </button>

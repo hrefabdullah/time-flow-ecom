@@ -4,6 +4,7 @@ import { allBrands, filterbyBrand } from "../utils/searchProducts";
 import { useSelector } from "react-redux";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const AllBrands = () => {
   const isDark = useSelector((state) => state.darkMode);
@@ -22,28 +23,29 @@ const AllBrands = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {allBrands.map((brand) => {
           const brandProducts = filterbyBrand(brand.toLowerCase());
-          const sampleProduct = brandProducts[0]; // Get first product of this brand
+          const sampleProduct = brandProducts[0];
 
           return (
             <Link
               key={brand}
               to={`/products/${brand.toLowerCase()}`}
-              className={`w-max border rounded-xl text-center font-semibold shadow-sm transition hover:shadow-md ${cardClass}`}
+              className={`min-w-[170px] md:h-[35vh] p-5 border rounded-xl text-center font-semibold shadow-sm transition hover:shadow-md flex flex-col justify-center items-center ${cardClass}`}
             >
               {sampleProduct && (
                 <img
                   src={sampleProduct.img1}
                   alt={brand}
-                  className="w-38 h-40 mb-2 object-cover rounded-xl"
+                  className="w-full h-45 md:h-55 mb-2 object-cover rounded-xl"
                 />
               )}
-              <div className="text-lg mb-2">{brand}</div>
+              <div className="text-xl mb-2">{brand}</div>
             </Link>
           );
         })}
       </div>
     </div>
     <Footer />
+    <ScrollToTopButton />
     </>
 
   );

@@ -18,7 +18,7 @@ const SearchBox = () => {
           {arr2.map((elem, idx) => (
             <Link onClick={() => dispatch(toggleSearchBox())} to={`/product/${elem.id}`} key={idx} className='p-1 text-sm'>{elem.name}</Link>
         ))}
-        { arr2.length  ? <Link to={'/products'} className=' text-sm p-1 w-full text-start opacity-75 hover:opacity-100'>Show all ({ arr.length })</Link> : <h1>Search for something</h1>}
+        { arr2.length  ? <Link to={`/products/${arr2[0].brand.toLowerCase()}`} onClick={() => dispatch(toggleSearchBox())} className=' text-sm p-1 w-full text-start opacity-75 hover:opacity-100'>Show all ({ arr.length })</Link> : <h1>Search for something</h1>}
         </div> : <h1 className='text-sm opacity-75'>Search for something</h1>}
     </div>
   )

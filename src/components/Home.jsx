@@ -10,6 +10,7 @@ import Category from './Category'
 import Testimonials from './Testimonials'
 import Footer from './Footer'
 import { useDispatch, useSelector } from 'react-redux'
+import ScrollToTopButton from './ScrollToTopButton'
 
 const Home = () => {
 
@@ -27,6 +28,7 @@ const Home = () => {
             <Category type={'brands'} />
             <Testimonials />
             <Footer />
+            <ScrollToTopButton />
         </div>
     )
 }

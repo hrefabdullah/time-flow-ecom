@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { Link, useParams } from 'react-router-dom';
 import { allBrands, allCategory, filterbyBrand, filterbyGender } from '../utils/searchProducts';
+import ScrollToTopButton from './ScrollToTopButton';
 
 const ResultProducts = ({ results = [] }) => {
   const brands = allBrands;
@@ -60,7 +61,7 @@ const ResultProducts = ({ results = [] }) => {
                 </div>
 
                 {/* Product Image */}
-                <div className={`w-full h-44 overflow-hidden place-items-center ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
+                <div className={`w-full h-44 overflow-hidden place-items-center bg-white`}>
                   <img
                     src={product.img1}
                     alt={product.name}
@@ -85,6 +86,7 @@ const ResultProducts = ({ results = [] }) => {
         )}
       </div>
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 };

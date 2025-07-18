@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { addItemCart } from "../features/cart/userCart.js";
 import { addQuantity } from "../features/cart/userCartQuan.js";
+import ScrollToTopButton from "./ScrollToTopButton.jsx";
 
 
 const mockReviews = [
@@ -80,7 +81,7 @@ const ProductDetails = () => {
       )}
       <Navbar />
       <div
-        className={`max-w-7xl mx-auto px-6 py-12 min-h-screen lg:min-h-[70vh] lg:h-max ${bgClass}`}
+        className={`w-full mx-auto px-6 py-12 min-h-screen lg:min-h-[70vh] lg:h-max flex flex-col justify-center items-center ${bgClass}`}
       >
         {/* Breadcrumb */}
         <nav className={`mb-8 text-xs lg:text-sm font-medium ${isDark ? "text-blue-400" : "text-blue-700"}`}>
@@ -88,11 +89,11 @@ const ProductDetails = () => {
         </nav>
 
         <div
-          className={`grid md:grid-cols-2 gap-14 rounded-2xl shadow-lg p-8 lg:h-[84vh] lg:overflow-y-auto ${cardBgClass}`}
+          className={`max-w-7xl grid md:grid-cols-2 gap-14 rounded-2xl shadow-lg p-8 lg:h-[84vh] lg:overflow-y-auto ${cardBgClass}`}
         >
           {/* Left: Images */}
           <div>
-            <div className={`border ${borderClass} rounded-xl shadow-sm`}>
+            <div className={`border py-5 bg-white ${borderClass} rounded-xl shadow-sm`}>
               <img
                 src={mainImage}
                 alt={product.name}
@@ -252,6 +253,7 @@ const ProductDetails = () => {
 
       </div>
       <Footer />
+      <ScrollToTopButton /> 
     </>
   );
 };

@@ -11,6 +11,8 @@ import CartSidebarr from './components/CartSidebarr.jsx';
 import { products } from './assets/products.js';
 import AllBrands from './components/AllBrands.jsx';
 import ScrollToTop from './utils/ScrollTop.jsx';
+import About from './components/About.jsx';
+import ContactUs from './components/ContactUs.jsx';
 
 const App = () => {
 
@@ -35,7 +37,9 @@ const App = () => {
         <Route path='/product/:id' element={<ProductDetails />} />
         <Route path='/checkout/:id' element={<CheckoutPage />} />
         <Route path='/checkout' element={<CheckoutPage />} />
-        <Route path='/store' element={<ResultProducts results={arr} />} />
+        <Route path='/store' element={<ResultProducts results={products} />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<ContactUs />} />
         <Route path='/products/best' element={<ResultProducts results={products.filter((elem) => (
             elem.bestseller
           )).map((elem, idx) => (

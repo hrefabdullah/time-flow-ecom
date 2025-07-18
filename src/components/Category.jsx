@@ -45,18 +45,18 @@ const Category = ({ type }) => {
             </div>}
             {type === 'brands' && 
             <div
-            className='w-full h-[40vh] flex flex-col px-8 py-6'>
+            className='w-full h-[40vh] flex flex-col px-8 py-6 mt-5'>
                 <h1
                 className='text-2xl mb-5'
                 >Shop By Brand</h1>
                 {brands.map((elem, idx) => (
                     <div onClick={() => dispatch(updateType(elem.toLowerCase()))}
-                    className={`${isDark ? 'text-white hover:bg-white hover:text-[#101019]' : 'text-[#101019] hover:bg-[#101019] hover:text-white'} h-[5vh] border-b-1 p-7 w-full justify-center items-center flex`}
+                    className={`${isDark ? 'text-white hover:bg-white hover:text-[#101019]' : 'text-[#101019] hover:bg-[#101019] hover:text-white'} h-[5vh] border-b-1 p-7 w-full justify-center items-center flex `}
                     key={idx}>
                         <Link to={`/products/${elem.toLowerCase()}`}>{elem}</Link>
                     </div>
                 ))}
-                <Link to={`/products/brands`}>View all</Link>
+                <Link className={`${isDark ? 'text-white hover:bg-white hover:text-[#101019]' : 'text-[#101019] hover:bg-[#101019] hover:text-white'} h-[5vh] border-b-1 p-7 w-full justify-center items-center flex`} to={`/products/brands`}>View all</Link>
             </div>}
         </>
     )

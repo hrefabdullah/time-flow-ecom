@@ -7,7 +7,7 @@ import { toggleCart } from '../features/cart/cart.js';
 import { toggleSearchBox } from '../features/search/searchBox.js';
 import { DiAptana } from 'react-icons/di';
 import { addItem } from '../features/search/searchInput.js';
-import { Link } from 'react-router-dom';
+import { Link, Links } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -33,14 +33,14 @@ const Navbar = () => {
                 <div className='h-3 lg:h-4.5 w-1 bg-blue-300 rotate-14 lg:mr-20'></div>
             </Link>
             <ul className='hidden md:flex justify-between gap-4 text-sm lg:text-md cursor-pointer'>
-                <li className=' hover:border-b-1 py-2'>Best Sellers</li>
-                <li className=' hover:border-b-1 py-2'>Latest Arrivals</li>
-                <li className=' hover:border-b-1 py-2'>Premium</li>
-                <li className=' hover:border-b-1 py-2'>Category</li>
+                <Link to={'/'} className=' hover:border-b-1 py-2'>Home</Link>
+                <Link to={'/store'} className=' hover:border-b-1 py-2'>Store</Link>
+                <Link to={'/about'} className=' hover:border-b-1 py-2'>About us</Link>
+                <Link to={'/contact'} className=' hover:border-b-1 py-2'>Contact us</Link>
             </ul>
             <div className='flex gap-4 text-lg lg:text-xl px-3 '>
                 <div className={`bg-white flex w-max px-3 py-1 rounded-full border-[1.5px]`}>
-                    <input onClick={() => dispatch(toggleSearchBox())} onChange={(e) => dispatch(addItem(e.target.value))} onMouseOut={() => dispatch(toggleSearchBox())} className={`w-[80px] md:w-[160px] text-xs px-1 py-0.5 focus:outline-none text-[#101019]`} placeholder='Search' type="text" />
+                    <input onClick={() => dispatch(toggleSearchBox())} onChange={(e) => dispatch(addItem(e.target.value))} onSubmit={() => dispatch(toggleSearchBox())} className={`w-[80px] md:w-[160px] text-xs px-1 py-0.5 focus:outline-none text-[#101019]`} placeholder='Search' type="text" />
                     <button className='text-[#101019]'><IoSearch /></button>
                 </div>
                 <button className='hidden md:inline' onClick={() => dispatch(toggleDarkMode())}>
